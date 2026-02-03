@@ -1,0 +1,44 @@
+TOPICS COVERED 
+Python Basics: Python identifiers, keywords, indentation rules,
+Python data types, Variables and dynamic typing, Type conversion
+and type checking.
+Operators and Input: Operators in Python (Arithmetic, Assignment,
+Logical, Relational,), Taking user input from console.
+Conditional Statements: if statement, if-else statement, Nested if-
+else, elif ladder.
+
+# grading system 
+# input --> User name, Marks 
+# task --> Assign grades 
+
+name = input("Enter your name: ")
+rollNumber = input("Enter your roll Number: ")
+mark1 = int(input("Enter your first subject marks: "))
+mark2 = int(input("Enter your second subject marks: "))
+mark3 = int(input("Enter your third subject marks: "))
+
+total = mark1 + mark2 + mark3
+print(total)
+percentage = total / 3
+print(percentage)
+
+# checking condition 
+# if marks of each subject is greater or equal to 40 then print PASS
+if mark1 >= 40 and mark2 >= 40 and mark3 >= 40:
+    result = 'PASS'
+else:
+    result = 'FAIL'
+    
+print(result)    
+
+# Assign grades 
+if percentage >= 90:
+    grade = 'A+'
+elif percentage >= 80:
+    grade = 'A'
+elif percentage >= 70:
+    grade = 'B'
+else:
+    grade = 'F'
+    
+print(grade)    
