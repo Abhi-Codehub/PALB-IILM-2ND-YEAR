@@ -45,6 +45,20 @@ class Solution(object):
        n = len(nums)
        return nums[n/2]
 
-        
+
+LeetCode 283 Move Zeroes 
+Brute Force 
+class Solution(object):
+    def moveZeroes(self, nums):
+        index = 0
+        n = len(nums)
+        for i in range(n):
+            if(nums[i] != 0):
+                nums[index] = nums[i] 
+                index += 1
+
+        while(index < n):
+            nums[index] = 0
+            index += 1         
 
         
