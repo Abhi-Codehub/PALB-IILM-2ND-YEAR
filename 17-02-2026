@@ -1,0 +1,50 @@
+LeetCode 189
+rotate Array by k steps 
+class Solution(object):
+
+    def reverse(self, nums, start, end):
+        while start < end:
+            nums[start], nums[end] = nums[end], nums[start]
+            start += 1
+            end -= 1
+
+    def rotate(self, nums, k):
+        n = len(nums)
+        k = k % n
+        # first rotation --> complete array
+        self.reverse(nums, 0, n-1)
+        # second rotation --> first k elements
+        self.reverse(nums, 0, k - 1)
+        # third rotation --> rest of the data rotate
+        self.reverse(nums, k, n - 1)
+
+
+
+LeetCode 169 
+Majority Element 
+Brute Force 
+class Solution(object):
+    def majorityElement(self, nums):
+       n = len(nums)
+
+       for i in range(n):
+        count = 0
+        for j in range(n):
+            if nums[i] == nums[j]:
+                count += 1
+
+        if count > n // 2:
+            return nums[i]
+
+       return -1              
+
+Better 
+class Solution(object):
+    def majorityElement(self, nums):
+       nums.sort()
+       n = len(nums)
+       return nums[n/2]
+
+        
+
+        
