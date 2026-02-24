@@ -1,0 +1,61 @@
+Leetcode 20
+Valid Paranthesis
+class Solution:
+    def isValid(self, s: str) -> bool:
+        st = []
+
+        for c in s:
+            if c == '(':
+                st.append(')')
+            elif c == '{':
+                st.append('}')
+            elif c == '[':
+                st.append(']')
+            else:
+                if not st or st.pop() != c:
+                    return False
+
+        return len(st) == 0
+
+LeetCode 921
+Minimum add to make valid Paranthesis
+class Solution:
+    def minAddToMakeValid(self, s: str) -> int:
+        S = []
+        c = 0
+
+        for i in s:
+            if i == '(':
+                S.append(i)
+            else:
+                if not S:
+                    c += 1
+                else:
+                    S.pop()
+
+        return c + len(S)
+
+
+LeetCode 739 
+Daily Temperature 
+class Solution:
+   def dailyTemperatures(self, temperatures):
+       length = len(temperatures)
+       result = [0] * length
+       stack = []  # will store indices
+
+
+       for i in range(length - 1, -1, -1):
+           while stack and temperatures[i] >= temperatures[stack[-1]]:
+               stack.pop()
+
+
+           if stack:
+               result[i] = stack[-1] - i
+
+
+           stack.append(i)
+
+
+       return result
+
